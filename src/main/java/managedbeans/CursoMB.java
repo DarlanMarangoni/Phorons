@@ -36,4 +36,9 @@ public class CursoMB {
 		return cursos;
 	}
 	
+	public void consultar() {
+		Curso obj = new Curso();
+		obj = curso;
+		curso = cursoService.getById((Class<Curso>) obj.getClass(), obj.getId());
+	}
 }

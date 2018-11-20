@@ -38,7 +38,7 @@
 		</h:panelGrid>
 
 		<p:commandButton value="Consultar" id="consultar"
-			 style="margin-right:20px;" />
+			 action="#{cursoMB.consultar}" update="formCurso" style="margin-right:20px;" />
 		<p:commandButton value="Inserir" id="inserir"
 			action="#{cursoMB.salvar}" update="formCurso" style="margin-right:20px;" />
 		<p:commandButton value="Alterar" id="alterar"
