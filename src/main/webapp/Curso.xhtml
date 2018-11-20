@@ -45,7 +45,7 @@
 			action="#{cursoMB.salvar}" update="formCurso" style="margin-right:20px;" />
 		<p:commandButton value="Excluir" id="excluir"
 			action="#{cursoMB.remover}" update="formCurso" style="margin-right:20px;" />
-		<p:commandButton value="Sair" id="sair" style="margin-right:20px;" />
+		<p:commandButton value="Sair" id="sair" action="Menu" style="margin-right:20px;" />
 		
 		<p:dataTable value="#{cursoMB.cursos}" var="aux">
 				<p:column headerText="Id">
