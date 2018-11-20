@@ -34,7 +34,8 @@ public abstract class Service <T, I extends Serializable> {
 
 	public void remove(T entity) {
 		getEntityManager().getTransaction().begin();
-		getEntityManager().remove(entity);
+		T obj = em.merge(entity);
+		getEntityManager().remove(obj);
 		getEntityManager().getTransaction().commit();
 
 	}

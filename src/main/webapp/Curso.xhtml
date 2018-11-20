@@ -42,9 +42,9 @@
 		<p:commandButton value="Inserir" id="inserir"
 			action="#{cursoMB.salvar}" update="formCurso" style="margin-right:20px;" />
 		<p:commandButton value="Alterar" id="alterar"
-			style="margin-right:20px;" />
+			action="#{cursoMB.salvar}" update="formCurso" style="margin-right:20px;" />
 		<p:commandButton value="Excluir" id="excluir"
-			style="margin-right:20px;" />
+			action="#{cursoMB.remover}" update="formCurso" style="margin-right:20px;" />
 		<p:commandButton value="Sair" id="sair" style="margin-right:20px;" />
 		
 		<p:dataTable value="#{cursoMB.cursos}" var="aux">
