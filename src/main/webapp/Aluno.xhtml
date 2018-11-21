@@ -9,117 +9,106 @@
 </h:head>
 <h:body>
 
-	<h:form>
-		<p:outputLabel>CPF: </p:outputLabel>
-		<p:inputMask mask="999.999.999-99"></p:inputMask>
-		<br />
-		<br />
+<h:form id="formInstrutor">
+		<h:panelGrid columns="2">
+			<p:outputLabel value="id"/>
+			<p:inputText value="#{alunoMB.aluno.id}"/>
 
-		<p:outputLabel>Nome: </p:outputLabel>
-		<p:inputText></p:inputText>
-		<br />
-		<br />
+			<p:outputLabel value="CPF"/> 
+			<p:inputMask mask="999.999.999-99" value="#{alunoMB.aluno.cpf}"></p:inputMask>
+			
+			<p:outputLabel value="Nome"/>
+			<p:inputText value="#{alunoMB.aluno.nome}"/>
 
+			<p:outputLabel for="sexo" value="Sexo:" />
+				<p:selectOneMenu id="sexo" value="#{alunoMB.aluno.sexo}"
+					style="width:125px">
+					<f:selectItem itemLabel="Select One" itemValue="" />
+					<f:selectItem itemLabel="Masculino" itemValue="M" />
+					<f:selectItem itemLabel="Feminino" itemValue="F" />
+				</p:selectOneMenu>
+			
+			<p:outputLabel for="escolaridade" value="Escolaridade" />
+				<p:selectOneMenu id="escolaridade" value="#{alunoMB.aluno.escolaridade}"
+					style="width:125px">
+					<f:selectItem itemLabel="Select One" itemValue="" />
+					<f:selectItem itemLabel="Médio" itemValue="medio" />
+					<f:selectItem itemLabel="Fundamental" itemValue="fundamental" />
+			</p:selectOneMenu>
+				
+			<p:outputLabel value="Endereço"/>
+			<p:inputText value="#{alunoMB.aluno.endereco}"/>
+			
+			<p:outputLabel value="Bairro"/>
+			<p:inputText value="#{alunoMB.aluno.bairro}"/>
+			
+			<p:outputLabel value="Cidade"/>
+			<p:inputText value="#{alunoMB.aluno.cidade}"/>
+			
+			<p:outputLabel for="estado" value="Estado:" />
+				<p:selectOneMenu id="estado" value="#{alunoMB.aluno.estado}"
+					style="width:125px">
+					<f:selectItem itemLabel="Select One" itemValue="" />
+					<f:selectItem itemLabel="SP" itemValue="sp" />
+					<f:selectItem itemLabel="PR" itemValue="pr" />
+				</p:selectOneMenu>
+				
+			<p:outputLabel value="RG"/> 
+			<p:inputMask mask="99.999.999-9" value="#{alunoMB.aluno.rg}"></p:inputMask>
+				
+			<p:outputLabel value="email"/>
+			<p:inputText value="#{alunoMB.aluno.email}"/>
+			
+			<p:outputLabel value="Data de Nascimento"/>
+			<p:inputMask mask="99/99/9999" value="#{alunoMB.aluno.dataNasc}"></p:inputMask>
+			
+			<p:outputLabel for="estadoCivil" value="Estado civil:" />
+				<p:selectOneMenu id="estadoCivil" value="#{alunoMB.aluno.estadoCivil}"
+					style="width:125px">
+					<f:selectItem itemLabel="Select One" itemValue="" />
+					<f:selectItem itemLabel="Casado" itemValue="casado" />
+					<f:selectItem itemLabel="Solteiro" itemValue="solteiro" />
+				</p:selectOneMenu>		
+						
+			<p:outputLabel value="Número"/>
+			<p:inputText value="#{alunoMB.aluno.numero}"/>
+			
+			<p:outputLabel value="CEP"/> 
+			<p:inputMask mask="99999-999" value="#{alunoMB.aluno.cep}"></p:inputMask>
+			
+			<p:outputLabel value="Telefone"/> 
+			<p:inputMask mask="(99)9999-9999" value="#{alunoMB.aluno.telefone}"></p:inputMask>
+			
+			<p:outputLabel value="Celular"/> 
+			<p:inputMask mask="(99)9 9999-9999" value="#{alunoMB.aluno.celular}"></p:inputMask>
+			
+		</h:panelGrid>
 
-		<p:outputLabel for="console" value="Sexo:" />
-		<p:selectOneMenu id="console" value="#{selectOneMenuView.console}"
-			style="width:125px">
-			<f:selectItem itemLabel="Select One" itemValue="" />
-			<f:selectItem itemLabel="Masculino" itemValue="M" />
-			<f:selectItem itemLabel="Feminino" itemValue="F" />
-		</p:selectOneMenu>
-		<br />
-		<br />
-		
-		<p:outputLabel for="console1" value="Escolaridade:" />
-		<p:selectOneMenu id="console1" value="#{selectOneMenuView.console}"
-			style="width:125px">
-			<f:selectItem itemLabel="Select One" itemValue="" />
-			<f:selectItem itemLabel="Superior" itemValue="M" />
-			<f:selectItem itemLabel="Fundamental" itemValue="F" />
-		</p:selectOneMenu>
-		<br />
-		<br />
-
-		<p:outputLabel>Endereço: </p:outputLabel>
-		<p:inputText></p:inputText>
-		<br />
-		<br />
-
-		<p:outputLabel>Bairro: </p:outputLabel>
-		<p:inputText></p:inputText>
-		<br />
-		<br />
-
-		<p:outputLabel>Cidade: </p:outputLabel>
-		<p:inputText></p:inputText>
-		<br />
-		<br />
-		
-		<p:outputLabel for="console2" value="Estado:" />
-		<p:selectOneMenu id="console2" value="#{selectOneMenuView.console}"
-			style="width:125px">
-			<f:selectItem itemLabel="Select One" itemValue="" />
-			<f:selectItem itemLabel="SP" itemValue="sp" />
-			<f:selectItem itemLabel="PR" itemValue="pr" />
-		</p:selectOneMenu>
-		<br />
-		<br />
-		
-		<p:outputLabel>RG: </p:outputLabel>
-		<p:inputMask mask="99.999.999-9"></p:inputMask>
-		<br />
-		<br />
-		
-		<p:outputLabel>Email: </p:outputLabel>
-		<p:inputText></p:inputText>
-		<br />
-		<br />
-		
-		<p:outputLabel>Data Nascimento: </p:outputLabel>
-		<p:inputMask mask="99/99/9999"></p:inputMask>
-		<br />
-		<br />
-		
-		<p:outputLabel for="console3" value="Estado:" />
-		<p:selectOneMenu id="console3" value="#{selectOneMenuView.console}"
-			style="width:125px">
-			<f:selectItem itemLabel="Select One" itemValue="" />
-			<f:selectItem itemLabel="Casado" itemValue="casado" />
-			<f:selectItem itemLabel="Solteiro" itemValue="solteiro" />
-		</p:selectOneMenu>
-		<br />
-		<br />
-		
-		<p:outputLabel>Nº: </p:outputLabel>
-		<p:inputText></p:inputText>
-		<br />
-		<br />
-		
-		<p:outputLabel>CEP: </p:outputLabel>
-		<p:inputMask mask="99999-999"></p:inputMask>
-		<br />
-		<br />
-		
-		<p:outputLabel>Telefone: </p:outputLabel>
-		<p:inputMask mask="(99)9999-9999"></p:inputMask>
-		<br />
-		<br />
-		
-		<p:outputLabel>Celular: </p:outputLabel>
-		<p:inputMask mask="(99)99999-9999"></p:inputMask>
-		<br />
-		<br />
-		
 		<p:commandButton value="Consultar" id="consultar"
-			style="margin-right:20px;" />
+			 action="#{alunoMB.consultar}" update="formInstrutor" style="margin-right:20px;" />
 		<p:commandButton value="Inserir" id="inserir"
-			style="margin-right:20px;" />
+			action="#{alunoMB.salvar}" update="formInstrutor" style="margin-right:20px;" />
 		<p:commandButton value="Alterar" id="alterar"
-			style="margin-right:20px;" />
+			action="#{alunoMB.salvar}" update="formInstrutor" style="margin-right:20px;" />
 		<p:commandButton value="Excluir" id="excluir"
-			style="margin-right:20px;" />
-		<p:commandButton value="Sair" id="sair" style="margin-right:20px;" />
+			action="#{alunoMB.remover}" update="formInstrutor" style="margin-right:20px;" />
+		<p:commandButton value="Sair" id="sair" action="Menu" style="margin-right:20px;" />
+		
+		<p:dataTable value="#{alunoMB.alunos}" var="aux">
+				<p:column headerText="Id">
+					<p:outputLabel value="#{aux.id}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Cpf">
+					<p:outputLabel value="#{aux.cpf}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="nome">
+					<p:outputLabel value="#{aux.nome}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Formação">
+					<p:outputLabel value="#{aux.escolaridade}"></p:outputLabel>
+				</p:column>
+
+			</p:dataTable>
 	</h:form>
 
 </h:body>

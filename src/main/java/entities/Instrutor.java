@@ -5,14 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
 
 @Entity
 public class Instrutor extends Pessoa implements Serializable{
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	private int id;
 	private String formacao;
 	private String areaAtuacao;
 	
@@ -28,14 +25,6 @@ public class Instrutor extends Pessoa implements Serializable{
 		super(cpf, nome);		
 	}
 	
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	public String getFormacao() {
 		return formacao;
 	}
@@ -66,5 +55,6 @@ public class Instrutor extends Pessoa implements Serializable{
 
 	public void setCurso(Curso curso) {
 		this.curso = curso;
-	}	
+	}
+
 }

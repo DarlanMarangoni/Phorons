@@ -30,7 +30,7 @@
 			<p:inputText value="#{cursoMB.curso.programa}"/>
 			
 			<p:outputLabel value="Data de Vigencia"/>
-			<p:inputText value="#{cursoMB.curso.dataVigencia}"/>
+			<p:inputMask mask="99/99/9999" value="#{cursoMB.curso.dataVigencia}"></p:inputMask>
 						
 			<p:outputLabel value="Valor hora"/>
 			<p:inputText value="#{cursoMB.curso.horaInstrutor}"/>

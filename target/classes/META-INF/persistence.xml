@@ -8,6 +8,7 @@
 		<class>entities.Curso</class>
 		<class>entities.AVista</class>
 		<class>entities.APrazo</class>
+		<class>entities.Pessoa</class>
 		
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/DBTreinamento;create=true"/>
