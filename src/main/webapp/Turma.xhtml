@@ -9,61 +9,63 @@
 </h:head>
 <h:body>
 
-	<h:form>
-
-
-		<p:outputLabel for="console" value="Curso:" />
-		<p:selectOneMenu id="console" value="#{selectOneMenuView.console}"
-			style="width:125px">
-			<f:selectItem itemLabel="Select One" itemValue="" />
-		</p:selectOneMenu>
-		<br />
-		<br />
-
-		<p:outputLabel>Sigla da turma: </p:outputLabel>
-		<p:inputText></p:inputText>
-		<br />
-		<br />
-
-		<p:outputLabel>Nome: </p:outputLabel>
-		<p:inputText></p:inputText>
-		<br />
-		<br />
-
-		<p:outputLabel>Qtde vagas: </p:outputLabel>
-		<p:inputText></p:inputText>
-		<br />
-		<br />
+	<h:form id="formTurma">
+		<h:panelGrid columns="2">
 		
-		<p:outputLabel for="console1" value="Periodo:" />
-		<p:selectOneMenu id="console1" value="#{selectOneMenuView.console}"
-			style="width:125px">
-			<f:selectItem itemLabel="Select One" itemValue="" />
-			<f:selectItem itemLabel="Diurno" itemValue="diurno" />
-			<f:selectItem itemLabel="Noturno" itemValue="noturno" />
-		</p:selectOneMenu>
-		<br />
-		<br />
+			<p:outputLabel value="id"/> 
+			<p:inputText value="#{turmaMB.turma.id}"/>
 		
-		<p:outputLabel>Data início: </p:outputLabel>
-		<p:inputMask mask="99/99/9999"></p:inputMask>
-		<br />
-		<br />
-		
-		<p:outputLabel>Data término: </p:outputLabel>
-		<p:inputMask mask="99/99/9999"></p:inputMask>
-		<br />
-		<br />
+			<p:outputLabel for="cursos" value="Curso:" />
+					<p:selectOneMenu id="cursos" 
+						style="width:125px">
+					<f:selectItem itemLabel="Select One" itemValue="" />
+            		<f:selectItems value="#{turmaMB.cursos}" />
+			</p:selectOneMenu>
+	
+			<p:outputLabel value="Sigla da turma"/> 
+			<p:inputText value="#{turmaMB.turma.siglaTurma}"/>
+			
+			<p:outputLabel value="Nome da turma"/>
+			<p:inputText value="#{turmaMB.turma.descricao}"/>
+
+			<p:outputLabel value="Quantidade de vagas"/>
+			<p:inputText value="#{turmaMB.turma.qtdeVagas}"/>
+			
+			<p:outputLabel for="periodo" value="Periodo" />
+				<p:selectOneMenu id="periodo" value="#{turmaMB.turma.periodo}"
+					style="width:125px">
+					<f:selectItem itemLabel="Select One" itemValue="" />
+					<f:selectItem itemLabel="Manhã" itemValue="manha" />
+					<f:selectItem itemLabel="Noite" itemValue="noite" />
+				</p:selectOneMenu>
+				
+			<p:outputLabel value="Data de Inicio"/>
+			<p:inputMask mask="99/99/9999" value="#{turmaMB.turma.dataInicio}"></p:inputMask>
+						
+			<p:outputLabel value="Data de Termino"/>
+			<p:inputMask mask="99/99/9999" value="#{turmaMB.turma.dataTermino}"></p:inputMask>
+
+		</h:panelGrid>
 
 		<p:commandButton value="Consultar" id="consultar"
-			style="margin-right:20px;" />
+			 action="#{turmaMB.consultar}" update="formTurma" style="margin-right:20px;" />
 		<p:commandButton value="Inserir" id="inserir"
-			style="margin-right:20px;" />
+			action="#{turmaMB.salvar}" update="formTurma" style="margin-right:20px;" icon="pi pi-save"/>
 		<p:commandButton value="Alterar" id="alterar"
-			style="margin-right:20px;" />
+			action="#{turmaMB.salvar}" update="formTurma" style="margin-right:20px;" />
 		<p:commandButton value="Excluir" id="excluir"
-			style="margin-right:20px;" />
-		<p:commandButton value="Sair" id="sair" style="margin-right:20px;" />
+			action="#{turmaMB.remover}" update="formTurma" style="margin-right:20px;" />
+		<p:commandButton value="Sair" id="sair" action="Menu" style="margin-right:20px;" />
+		
+		<p:dataTable value="#{turmaMB.turmas}" var="aux2">
+				<p:column headerText="Id">
+					<p:outputLabel value="#{aux2.id}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="Sigla">
+					<p:outputLabel value="#{aux2.siglaTurma}"></p:outputLabel>
+				</p:column>
+
+			</p:dataTable>
 	</h:form>
 
 </h:body>
